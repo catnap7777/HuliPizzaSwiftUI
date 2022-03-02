@@ -33,10 +33,18 @@ struct ContentView: View {
             //.. spacers push everything away from the closest margin or object; since this is at bottom of VStack, it pushes whole thing up toward top
             Text("Menu")
             List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
+                //.. can use alignment to move text, etc.
                 HStack(alignment: .top, spacing: 15) {
-                    //.. can use alignment to move text, etc.
                     Image("1_100w")
-                    Text("Huli Chicken Pizza")
+                    VStack {
+                        Text("Huli Chicken Pizza")
+                        HStack {
+                            //..must imbed in Hstack because it defaults to VStack
+                            ForEach(0..<4) { item in
+                                Image("Pizza Slice")
+                            }
+                        }
+                    }
                     //.. to left justify HStack
                     Spacer()
                 }
