@@ -31,21 +31,26 @@ struct ContentView: View {
             Text("Order Pizza")
                 .font(.largeTitle)
             //.. spacers push everything away from the closest margin or object; since this is at bottom of VStack, it pushes whole thing up toward top
-            Spacer()
-            //.. can use alignment to move text, etc.
-            HStack(alignment: .top, spacing: 15) {
-                Image("1_100w")
-                Text("Huli Chicken Pizza")
-                //.. to left justify HStack
-                Spacer()
+            Text("Menu")
+            List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
+                HStack(alignment: .top, spacing: 15) {
+                    //.. can use alignment to move text, etc.
+                    Image("1_100w")
+                    Text("Huli Chicken Pizza")
+                    //.. to left justify HStack
+                    Spacer()
+                }
             }
             Text("Your Order")
             //.. can use alignment to move text, etc.
-            HStack(alignment: .firstTextBaseline) {
-                Text("Your order item here:")
-                Spacer()
-                Text("$0.00")
+            List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
+                HStack(alignment: .firstTextBaseline) {
+                    Text("Your order item here:")
+                    Spacer()
+                    Text("$0.00")
+                }
             }
+            Spacer()
         }
         .padding()
     }
