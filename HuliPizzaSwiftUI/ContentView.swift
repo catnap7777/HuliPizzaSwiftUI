@@ -11,6 +11,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             ContentHeaderView()
+            PageTitleView(title: "Order Pizza")
             MenuListView()
             OrderListView()
             //.. spacers push everything away from the closest margin or object; since this is at bottom of VStack, it pushes whole thing up toward top

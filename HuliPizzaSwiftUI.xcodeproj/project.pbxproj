@@ -13,6 +13,7 @@
 		3A4EACDB27CFEEC1001A4EB4 /* MenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EACDA27CFEEC1001A4EB4 /* MenuRowView.swift */; };
 		3A4EACDF27CFEF51001A4EB4 /* OrderRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EACDE27CFEF51001A4EB4 /* OrderRowView.swift */; };
 		3A4EACE227CFF01E001A4EB4 /* RatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EACE127CFF01E001A4EB4 /* RatingsView.swift */; };
+		3A4EACE527CFF28B001A4EB4 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EACE427CFF28B001A4EB4 /* PageTitleView.swift */; };
 		3A87B3B527CEE3880086CB1C /* HuliPizzaSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A87B3B427CEE3880086CB1C /* HuliPizzaSwiftUIApp.swift */; };
 		3A87B3B727CEE3880086CB1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A87B3B627CEE3880086CB1C /* ContentView.swift */; };
 		3A87B3B927CEE38B0086CB1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A87B3B827CEE38B0086CB1C /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		3A4EACDA27CFEEC1001A4EB4 /* MenuRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRowView.swift; sourceTree = "<group>"; };
 		3A4EACDE27CFEF51001A4EB4 /* OrderRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRowView.swift; sourceTree = "<group>"; };
 		3A4EACE127CFF01E001A4EB4 /* RatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsView.swift; sourceTree = "<group>"; };
+		3A4EACE427CFF28B001A4EB4 /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		3A87B3B127CEE3880086CB1C /* HuliPizzaSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HuliPizzaSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A87B3B427CEE3880086CB1C /* HuliPizzaSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuliPizzaSwiftUIApp.swift; sourceTree = "<group>"; };
 		3A87B3B627CEE3880086CB1C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				3A87B3B427CEE3880086CB1C /* HuliPizzaSwiftUIApp.swift */,
 				3A87B3B627CEE3880086CB1C /* ContentView.swift */,
 				3A4EACD627CFEBA7001A4EB4 /* ContentHeaderView.swift */,
+				3A4EACE427CFF28B001A4EB4 /* PageTitleView.swift */,
 				3A4EACCD27CFEA26001A4EB4 /* HistoryView */,
 				3A4EACCC27CFEA18001A4EB4 /* MenuView */,
 				3A4EACCB27CFEA0E001A4EB4 /* OrderView */,
@@ -194,6 +197,7 @@
 				3A87B3B527CEE3880086CB1C /* HuliPizzaSwiftUIApp.swift in Sources */,
 				3A4EACDB27CFEEC1001A4EB4 /* MenuRowView.swift in Sources */,
 				3A4EACDF27CFEF51001A4EB4 /* OrderRowView.swift in Sources */,
+				3A4EACE527CFF28B001A4EB4 /* PageTitleView.swift in Sources */,
 				3A4EACD027CFEA6A001A4EB4 /* OrderListView.swift in Sources */,
 				3A4EACE227CFF01E001A4EB4 /* RatingsView.swift in Sources */,
 			);

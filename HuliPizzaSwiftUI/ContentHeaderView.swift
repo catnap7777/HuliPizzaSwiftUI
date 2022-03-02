@@ -28,8 +28,7 @@ struct ContentHeaderView: View {
 //            Image("Surf Board")
 //                .resizable()
 //                .scaledToFit()
-            Text("Order Pizza")
-                .font(.largeTitle)
+            
         }
         
     }
@@ -40,3 +39,4 @@ struct ContentHeaderView_Previews: PreviewProvider {
         ContentHeaderView()
     }
 }
+
