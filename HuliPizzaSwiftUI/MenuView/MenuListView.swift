@@ -10,7 +10,7 @@ import SwiftUI
 struct MenuListView: View {
     var body: some View {
         VStack {
-            Text("Menu")
+            ListHeaderView(text: "Menu")
             List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
                 //.. can use alignment to move text, etc.
                 MenuRowView()
@@ -24,5 +24,6 @@ struct MenuListView_Previews: PreviewProvider {
         MenuListView()
     }
 }
+
 
 
