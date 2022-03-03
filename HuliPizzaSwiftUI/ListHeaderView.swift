@@ -13,8 +13,11 @@ struct ListHeaderView: View {
         HStack {
             Text(text)
                 .padding(.leading, 5)
+                .foregroundColor(Color("G2"))
             Spacer()
         }
+        //.. makes entire line background this color
+        .background(Color("G4"))
     }
 }
 
