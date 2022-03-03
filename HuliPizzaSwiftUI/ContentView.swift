@@ -11,11 +11,15 @@ struct ContentView: View {
     var body: some View {
         VStack {
             ContentHeaderView()
+                .layoutPriority(2)
+            //.. we don't set layoutPriority for PageTitleView bc it already has some absolute settings that we set earlier
             PageTitleView(title: "Order Pizza")
             MenuListView()
+                .layoutPriority(1)
             OrderListView()
+                .layoutPriority(1)
             //.. spacers push everything away from the closest margin or object; since this is at bottom of VStack, it pushes whole thing up toward top
-            Spacer()
+            //Spacer()
         }
         .padding()
     }
