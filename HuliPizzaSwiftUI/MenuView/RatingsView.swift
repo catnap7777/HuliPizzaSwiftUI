@@ -12,7 +12,10 @@ struct RatingsView: View {
         HStack {
             //..must imbed in Hstack because it defaults to VStack
             ForEach(0..<4) { item in
-                Image("Pizza Slice")
+                //Image("Pizza Slice")
+                Image(systemName: "star.circle")
+                    .font(.headline)
+                    .foregroundColor(Color("G4"))
             }
         }
     }

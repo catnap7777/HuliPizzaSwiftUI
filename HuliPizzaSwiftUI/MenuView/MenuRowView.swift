@@ -11,7 +11,12 @@ struct MenuRowView: View {
     var body: some View {
         HStack(alignment: .top, spacing: 15) {
             Image("1_100w")
-            VStack {
+//                .cornerRadius(10)
+//                .border(Color("G4"), width: 2)
+//                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                .clipShape(Capsule())
+                .shadow(color: Color.black.opacity(0.7), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 5.0, y: 5.0)
+            VStack(alignment: .leading) {
                 Text("Huli Chicken Pizza")
                     .font(.title)
                     .fontWeight(.light)
