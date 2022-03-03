@@ -15,6 +15,7 @@ struct ContentHeaderView: View {
                 Image("Surf Board")
                     .resizable()
                     .scaledToFit()
+                    .frame(minWidth: 300, idealWidth: 500, maxWidth: 600, minHeight: 75, idealHeight: 143, maxHeight: 150, alignment: .center)
                 Text("Huli Pizza Company")
                     //.. use custom font here so it doesn't scale
                     .font(Font.custom("Chalkboard SE", size: 10))
