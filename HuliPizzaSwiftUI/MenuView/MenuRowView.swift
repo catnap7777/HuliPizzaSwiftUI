@@ -13,10 +13,12 @@ struct MenuRowView: View {
             Image("1_100w")
             VStack {
                 Text("Huli Chicken Pizza")
+                    .font(.title)
+                    .fontWeight(.light)
                 RatingsView()
             }
             //.. to left justify HStack
-            Spacer()
+            //Spacer()
         }
     }
 }
@@ -24,6 +26,9 @@ struct MenuRowView: View {
 struct MenuRowView_Previews: PreviewProvider {
     static var previews: some View {
         MenuRowView()
+        //.. use this to check what happens if font is too large for screen if user changes something
+            //.environment(\.sizeCategory, .accessibilityExtraExtraLarge)
+        
     }
 }
 

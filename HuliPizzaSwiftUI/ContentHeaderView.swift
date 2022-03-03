@@ -16,9 +16,11 @@ struct ContentHeaderView: View {
                     .resizable()
                     .scaledToFit()
                 Text("Huli Pizza Company")
-                    .font(.title)
+                    //.. use custom font here so it doesn't scale
+                    .font(Font.custom("Chalkboard SE", size: 10))
+                    //.font(.title)
                     .fontWeight(.heavy)
-                    .foregroundColor(Color.green)
+                    .foregroundColor(Color.white)
             }
             //.. used to be this way without ZStack
 //            Text("Huli Pizza Company")
@@ -37,6 +39,8 @@ struct ContentHeaderView: View {
 struct ContentHeaderView_Previews: PreviewProvider {
     static var previews: some View {
         ContentHeaderView()
+            //.. use this to check what happens if font is too large for screen if user changes something... but in this case, "Huli Pizza Company" is too big and we do NOT want scaleable font... so, above on text, we will put another modifier - (ie. use custom font)
+            .environment(\.sizeCategory, .accessibilityExtraExtraLarge)
     }
 }
 
