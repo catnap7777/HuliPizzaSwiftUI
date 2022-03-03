@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A4667D127D131C100EAB0C9 /* SelectedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4667D027D131C100EAB0C9 /* SelectedImageView.swift */; };
 		3A4EACD027CFEA6A001A4EB4 /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EACCF27CFEA6A001A4EB4 /* OrderListView.swift */; };
 		3A4EACD427CFEB22001A4EB4 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EACD327CFEB22001A4EB4 /* MenuListView.swift */; };
 		3A4EACD727CFEBA7001A4EB4 /* ContentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EACD627CFEBA7001A4EB4 /* ContentHeaderView.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A4667D027D131C100EAB0C9 /* SelectedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedImageView.swift; sourceTree = "<group>"; };
 		3A4EACCF27CFEA6A001A4EB4 /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
 		3A4EACD327CFEB22001A4EB4 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
 		3A4EACD627CFEBA7001A4EB4 /* ContentHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentHeaderView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				3A4EACD627CFEBA7001A4EB4 /* ContentHeaderView.swift */,
 				3A4EACE427CFF28B001A4EB4 /* PageTitleView.swift */,
 				3A4EACF227CFFB62001A4EB4 /* ListHeaderView.swift */,
+				3A4667D027D131C100EAB0C9 /* SelectedImageView.swift */,
 				3A4EACCD27CFEA26001A4EB4 /* HistoryView */,
 				3A4EACCC27CFEA18001A4EB4 /* MenuView */,
 				3A4EACCB27CFEA0E001A4EB4 /* OrderView */,
@@ -212,6 +215,7 @@
 				3A4EACDF27CFEF51001A4EB4 /* OrderRowView.swift in Sources */,
 				3A4EACE527CFF28B001A4EB4 /* PageTitleView.swift in Sources */,
 				3A4EACD027CFEA6A001A4EB4 /* OrderListView.swift in Sources */,
+				3A4667D127D131C100EAB0C9 /* SelectedImageView.swift in Sources */,
 				3A4EACE927CFF5D4001A4EB4 /* HistoryRowView.swift in Sources */,
 				3A4EACF327CFFB62001A4EB4 /* ListHeaderView.swift in Sources */,
 				3A4EACE227CFF01E001A4EB4 /* RatingsView.swift in Sources */,
