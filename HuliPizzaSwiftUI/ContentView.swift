@@ -8,16 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isMenuDisplayed: Bool = true
     var body: some View {
         VStack {
             ContentHeaderView()
                 .layoutPriority(2)
-            //.. we don't set layoutPriority for PageTitleView bc it already has some absolute settings that we set earlier
-            PageTitleView(title: "Order Pizza")
+            Button(action: { self.isMenuDisplayed.toggle()}) {
+                //.. we don't set layoutPriority for PageTitleView bc it already has some absolute settings that we set earlier
+                PageTitleView(title: "Order Pizza", isDisplayingOrders: isMenuDisplayed)
+                    .padding(.bottom, 2)
+            }
             MenuListView()
-                .layoutPriority(1)
+                .layoutPriority(isMenuDisplayed ? 1.0 : 0.5)
             OrderListView()
-                .layoutPriority(1)
+                .layoutPriority(isMenuDisplayed ? 0.5 : 1.0)
             //.. spacers push everything away from the closest margin or object; since this is at bottom of VStack, it pushes whole thing up toward top
             //Spacer()
         }
