@@ -25,7 +25,7 @@ struct ContentView: View {
             //.. spacers push everything away from the closest margin or object; since this is at bottom of VStack, it pushes whole thing up toward top
             //Spacer()
         }
-        .padding()
+        //.padding()
     }
 }
 

@@ -14,8 +14,9 @@ struct MenuListView: View {
         VStack {
             ListHeaderView(text: "Menu")
             List(menuList) { item in
-                MenuRowView()
-                Text(item.name)
+                MenuRowView(menuItem: item)
+                    //.. to increase or decrease for white space
+                    .listRowInsets(EdgeInsets())
             }
         }
     }
