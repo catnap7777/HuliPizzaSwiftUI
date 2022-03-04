@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct MenuListView: View {
+    var menuList = MenuModel().menu
     var body: some View {
+        //.. can use alignment to move text, etc.
         VStack {
             ListHeaderView(text: "Menu")
-            List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
-                //.. can use alignment to move text, etc.
+            List(menuList) { item in
                 MenuRowView()
+                Text(item.name)
             }
         }
     }
