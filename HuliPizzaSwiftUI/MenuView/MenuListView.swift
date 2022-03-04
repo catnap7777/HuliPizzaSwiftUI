@@ -13,10 +13,15 @@ struct MenuListView: View {
         //.. can use alignment to move text, etc.
         VStack {
             ListHeaderView(text: "Menu")
-            List(menuList) { item in
-                MenuRowView(menuItem: item)
-                    //.. to increase or decrease for white space
-                    .listRowInsets(EdgeInsets())
+            NavigationView {
+                List(menuList) { item in
+                    NavigationLink(destination: MenuDetailView(menuItem: item)) {
+                        MenuRowView(menuItem: item)
+                            //.. to increase or decrease for white space
+                            .listRowInsets(EdgeInsets())
+                    }
+                }
+                .navigationBarTitle("Pizza Order")
             }
         }
     }

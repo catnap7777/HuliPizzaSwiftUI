@@ -11,6 +11,7 @@
 		3A469F7A27D2819600A65AE4 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A469F7727D2819600A65AE4 /* OrderModel.swift */; };
 		3A469F7B27D2819600A65AE4 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A469F7827D2819600A65AE4 /* HistoryModel.swift */; };
 		3A469F7C27D2819600A65AE4 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A469F7927D2819600A65AE4 /* MenuModel.swift */; };
+		3A469F8027D2D00200A65AE4 /* MenuDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A469F7F27D2D00200A65AE4 /* MenuDetailView.swift */; };
 		3A4EACD027CFEA6A001A4EB4 /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EACCF27CFEA6A001A4EB4 /* OrderListView.swift */; };
 		3A4EACD427CFEB22001A4EB4 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EACD327CFEB22001A4EB4 /* MenuListView.swift */; };
 		3A4EACD727CFEBA7001A4EB4 /* ContentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EACD627CFEBA7001A4EB4 /* ContentHeaderView.swift */; };
@@ -33,6 +34,7 @@
 		3A469F7727D2819600A65AE4 /* OrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		3A469F7827D2819600A65AE4 /* HistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		3A469F7927D2819600A65AE4 /* MenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		3A469F7F27D2D00200A65AE4 /* MenuDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailView.swift; sourceTree = "<group>"; };
 		3A4EACCF27CFEA6A001A4EB4 /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
 		3A4EACD327CFEB22001A4EB4 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
 		3A4EACD627CFEBA7001A4EB4 /* ContentHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentHeaderView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				3A4EACD327CFEB22001A4EB4 /* MenuListView.swift */,
 				3A4EACDA27CFEEC1001A4EB4 /* MenuRowView.swift */,
+				3A469F7F27D2D00200A65AE4 /* MenuDetailView.swift */,
 				3A4EACE127CFF01E001A4EB4 /* RatingsView.swift */,
 			);
 			path = MenuView;
@@ -227,6 +230,7 @@
 				3A469F7A27D2819600A65AE4 /* OrderModel.swift in Sources */,
 				3A4EACE527CFF28B001A4EB4 /* PageTitleView.swift in Sources */,
 				3A4EACD027CFEA6A001A4EB4 /* OrderListView.swift in Sources */,
+				3A469F8027D2D00200A65AE4 /* MenuDetailView.swift in Sources */,
 				3A4667D127D131C100EAB0C9 /* SelectedImageView.swift in Sources */,
 				3A4EACE927CFF5D4001A4EB4 /* HistoryRowView.swift in Sources */,
 				3A4EACF327CFFB62001A4EB4 /* ListHeaderView.swift in Sources */,
