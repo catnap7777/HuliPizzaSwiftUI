@@ -9,10 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @State var isMenuDisplayed: Bool = true
+    @State var orderModel: OrderModel
+    
     var body: some View {
         VStack {
-            ContentHeaderView()
-                .layoutPriority(2)
+            //.. too big on screen, so get rid of
+//            ContentHeaderView()
+//                .layoutPriority(2)
             Button(action: { self.isMenuDisplayed.toggle()}) {
                 //.. we don't set layoutPriority for PageTitleView bc it already has some absolute settings that we set earlier
                 PageTitleView(title: "Order Pizza", isDisplayingOrders: isMenuDisplayed)
@@ -33,11 +36,11 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             //.. to have multiple devices previewed, use Group and put another ContentView
-            ContentView()
+            ContentView(orderModel: OrderModel())
                 .previewDevice("iPhone 12 Pro")
                 .previewDisplayName("iPhone 12 Pro")
             
-            ContentView()
+            ContentView(orderModel: OrderModel())
                 //.. for dark mode
                 .colorScheme(.dark)
                 .background(Color.black)
