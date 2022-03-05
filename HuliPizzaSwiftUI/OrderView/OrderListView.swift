@@ -12,7 +12,7 @@ struct OrderListView: View {
     var orderModel: OrderModel
     var body: some View {
         VStack {
-            ListHeaderView(text: "Your Order")
+            ListHeaderView(orderModel: orderModel, text: "Your Order")
             //.. can use alignment to move text, etc.
             List(orderModel.orders) { item in
                 OrderRowView(orderItem: item)

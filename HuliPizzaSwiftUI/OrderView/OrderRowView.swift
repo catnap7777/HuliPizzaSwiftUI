@@ -24,6 +24,6 @@ struct OrderRowView_Previews: PreviewProvider {
     static var previews: some View {
         OrderRowView(orderItem: testOrderItem)
             //.. use this to check what happens if font is too large for screen if user changes something
-            .environment(\.sizeCategory, .accessibilityExtraExtraLarge)
+            //.environment(\.sizeCategory, .accessibilityExtraExtraLarge)
     }
 }

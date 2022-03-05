@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var isMenuDisplayed: Bool = true
-    @State var orderModel: OrderModel
+    @ObservedObject var orderModel: OrderModel
     
     var body: some View {
         VStack {
@@ -22,7 +22,7 @@ struct ContentView: View {
                     .padding(.bottom, 2)
             }
             //.. this orderModel var is Binding in MenuListView
-            MenuListView(orderModel: $orderModel)
+            MenuListView(orderModel: orderModel)
                 .layoutPriority(isMenuDisplayed ? 1.0 : 0.5)
             //.. this orderModel var is NOT Binding and is "read only" in OrderListView
             OrderListView(orderModel: orderModel)
