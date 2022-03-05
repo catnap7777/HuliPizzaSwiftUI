@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MenuListView: View {
+    @Binding var orderModel: OrderModel
     var menuList = MenuModel().menu
     var body: some View {
         //.. can use alignment to move text, etc.
@@ -15,7 +16,7 @@ struct MenuListView: View {
             ListHeaderView(text: "Menu")
             NavigationView {
                 List(menuList) { item in
-                    NavigationLink(destination: MenuDetailView(menuItem: item)) {
+                    NavigationLink(destination: MenuDetailView(orderModel: $orderModel, menuItem: item)) {
                         MenuRowView(menuItem: item)
                             //.. to increase or decrease for white space
                             .listRowInsets(EdgeInsets())
@@ -29,7 +30,7 @@ struct MenuListView: View {
 
 struct MenuListView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuListView()
+        MenuListView(orderModel: .constant(OrderModel()))
     }
 }
 

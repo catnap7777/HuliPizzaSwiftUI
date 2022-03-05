@@ -21,9 +21,11 @@ struct ContentView: View {
                 PageTitleView(title: "Order Pizza", isDisplayingOrders: isMenuDisplayed)
                     .padding(.bottom, 2)
             }
-            MenuListView()
+            //.. this orderModel var is Binding in MenuListView
+            MenuListView(orderModel: $orderModel)
                 .layoutPriority(isMenuDisplayed ? 1.0 : 0.5)
-            OrderListView()
+            //.. this orderModel var is NOT Binding and is "read only" in OrderListView
+            OrderListView(orderModel: orderModel)
                 .layoutPriority(isMenuDisplayed ? 0.5 : 1.0)
             //.. spacers push everything away from the closest margin or object; since this is at bottom of VStack, it pushes whole thing up toward top
             //Spacer()

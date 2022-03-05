@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct OrderListView: View {
+    //.. don't need a binding orderModel var here because really, this is just "read only"
+    var orderModel: OrderModel
     var body: some View {
         VStack {
             ListHeaderView(text: "Your Order")
             //.. can use alignment to move text, etc.
-            List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
-                OrderRowView()
+            List(orderModel.orders) { item in
+                OrderRowView(orderItem: item)
             }
         }
     }
@@ -21,7 +23,7 @@ struct OrderListView: View {
 
 struct OrderListView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderListView()
+        OrderListView(orderModel: OrderModel())
     }
 }
 
