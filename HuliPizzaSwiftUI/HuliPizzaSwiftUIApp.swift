@@ -12,6 +12,7 @@ struct HuliPizzaSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(orderModel: OrderModel())
+                .environmentObject(UserPreferences())
         }
     }
 }

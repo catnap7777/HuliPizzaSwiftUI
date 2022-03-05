@@ -41,6 +41,7 @@ struct ContentView_Previews: PreviewProvider {
             ContentView(orderModel: OrderModel())
                 .previewDevice("iPhone 12 Pro")
                 .previewDisplayName("iPhone 12 Pro")
+                .environmentObject(UserPreferences())
             
             ContentView(orderModel: OrderModel())
                 //.. for dark mode
@@ -51,6 +52,7 @@ struct ContentView_Previews: PreviewProvider {
 //                .previewDisplayName("iPad Pro 9.7 inch")
                 .previewDevice("iPhone 11")
                 .previewDisplayName("iPhone 11 Dark Mode")
+                .environmentObject(UserPreferences())
             
         }
     }
