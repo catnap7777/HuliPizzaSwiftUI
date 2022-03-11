@@ -12,12 +12,24 @@ struct OrderListView: View {
     var orderModel: OrderModel
     var body: some View {
         VStack {
-            ListHeaderView(orderModel: orderModel, text: "Your Order")
+//            ListHeaderView(orderModel: orderModel, text: "Your Order")
             //.. can use alignment to move text, etc.
-            List(orderModel.orders) { item in
-                OrderRowView(orderItem: item)
+//            List(orderModel.orders) { item in
+            //.. better way of doing list with ForEach
+            List {
+                Section (
+                    header: ListHeaderView(orderModel: self.orderModel, text: "Your Order")
+                ) {
+                    ForEach(orderModel.orders) { item in
+                        OrderRowView(orderItem: item)
+                    }
+                    .onDelete(perform: delete)
+                }
             }
         }
+    }
+    func delete(at offsets: IndexSet) {
+        orderModel.orders.remove(atOffsets: offsets)
     }
 }
 
