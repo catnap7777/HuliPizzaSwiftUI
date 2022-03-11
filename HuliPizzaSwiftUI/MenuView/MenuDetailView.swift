@@ -12,10 +12,11 @@ struct MenuDetailView: View {
     @ObservedObject var orderModel: OrderModel
     @EnvironmentObject var settings: UserPreferences
     @State var didOrder: Bool = false
+    @State var quantity: Int = 1
     
     var menuItem:MenuItem
     var formattedPrice:String{
-        String(format:"%3.2f",menuItem.price)
+        String(format:"%3.2f",menuItem.price * Double(quantity))
     }
     func addItem(){
         //.. don't need this here when presenting sheet; do need for just alert from below
@@ -42,12 +43,17 @@ struct MenuDetailView: View {
                 Text(settings.size.formatted())
             }
             .font(.headline)
-            HStack{
-                Text("Quantity:")
-                Text("1")
+            Stepper(value: $quantity, in: 1...10) {
+                Text("Quantity: \(quantity)")
                     .bold()
-                Spacer()
             }
+            
+//            HStack{
+//                Text("Quantity:")
+//                Text("1")
+//                    .bold()
+//                Spacer()
+//            }
             .padding()
             HStack{
                 Text("Order:  \(formattedPrice)")
@@ -71,7 +77,7 @@ struct MenuDetailView: View {
 //                .alert(isPresented: $didOrder) {
 //                    Alert(title: Text("Pizza Ordered"), message: Text("You ordered a " + self.menuItem.name))
                 .sheet(isPresented: $didOrder) {
-                    ConfirmView(menuID: self.menuItem.id, orderModel: self.orderModel, isPresented: self.$didOrder)
+                    ConfirmView(menuID: self.menuItem.id, orderModel: self.orderModel, isPresented: self.$didOrder, quantity: $quantity)
                 }
                 Spacer()
             }
