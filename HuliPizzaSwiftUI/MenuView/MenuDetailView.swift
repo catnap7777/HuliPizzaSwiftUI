@@ -9,6 +9,7 @@
 import SwiftUI
 ///A `View`for entering in an order. Takes basic information about the order from `menuItem`
 struct MenuDetailView: View {
+    let sizes: [Size] = [.small, .medium, .large]
     @ObservedObject var orderModel: OrderModel
     @EnvironmentObject var settings: UserPreferences
     @State var didOrder: Bool = false
@@ -16,7 +17,7 @@ struct MenuDetailView: View {
     
     var menuItem:MenuItem
     var formattedPrice:String{
-        String(format:"%3.2f",menuItem.price * Double(quantity))
+        String(format:"%3.2f",menuItem.price * Double(quantity) * settings.size.rawValue)
     }
     func addItem(){
         //.. don't need this here when presenting sheet; do need for just alert from below
@@ -37,11 +38,25 @@ struct MenuDetailView: View {
                 .layoutPriority(3)
                 
             Spacer()
-            HStack{
-                Spacer()
-                Text("Pizza size")
-                Text(settings.size.formatted())
+            Text("Pizza Size")
+                .fontWeight(.heavy)
+                .foregroundColor(Color.green)
+                .underline()
+                
+            //.. note: according to https://www.hackingwithswift.com/forums/swiftui/swiftui-xcode-12-2-picker-no-longer-shows-label/4809 Xcode 12 no longer shows picker label
+            Picker(selection: $settings.size, label:Text("Pizza Size")) {
+                ForEach(sizes, id: \.self) { size in
+                    Text(size.formatted()).tag(size)
+                }
             }
+            .pickerStyle(SegmentedPickerStyle())
+            .background(Color("kamLightGreen"))
+                
+//            HStack{
+//                Spacer()
+//                Text("Pizza size")
+//                Text(settings.size.formatted())
+//            }
             .font(.headline)
             Stepper(value: $quantity, in: 1...10) {
                 Text("Quantity: \(quantity)")
@@ -77,7 +92,7 @@ struct MenuDetailView: View {
 //                .alert(isPresented: $didOrder) {
 //                    Alert(title: Text("Pizza Ordered"), message: Text("You ordered a " + self.menuItem.name))
                 .sheet(isPresented: $didOrder) {
-                    ConfirmView(menuID: self.menuItem.id, orderModel: self.orderModel, isPresented: self.$didOrder, quantity: $quantity)
+                    ConfirmView(menuID: self.menuItem.id, orderModel: self.orderModel, isPresented: self.$didOrder, quantity: $quantity, size: self.$settings.size)
                 }
                 Spacer()
             }
