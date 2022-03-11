@@ -9,7 +9,9 @@ import SwiftUI
 
 struct OrderListView: View {
     //.. don't need a binding orderModel var here because really, this is just "read only"
-    var orderModel: OrderModel
+    //var orderModel: OrderModel
+    //.. need ObservedObject so when row deleted, screen gets redrawn
+    @ObservedObject var orderModel: OrderModel
     var body: some View {
         VStack {
 //            ListHeaderView(orderModel: orderModel, text: "Your Order")
@@ -18,17 +20,17 @@ struct OrderListView: View {
             //.. better way of doing list with ForEach
             List {
                 Section (
-                    header: ListHeaderView(orderModel: self.orderModel, text: "Your Order")
-                ) {
+                    header:ListHeaderView(orderModel: self.orderModel, text: "Your Order:")
+                ){
                     ForEach(orderModel.orders) { item in
                         OrderRowView(orderItem: item)
                     }
-                    .onDelete(perform: delete)
+                    .onDelete(perform: kamdelete)
                 }
             }
         }
     }
-    func delete(at offsets: IndexSet) {
+    func kamdelete(at offsets: IndexSet) {
         orderModel.orders.remove(atOffsets: offsets)
     }
 }
