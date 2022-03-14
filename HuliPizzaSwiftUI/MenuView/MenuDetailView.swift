@@ -9,7 +9,7 @@
 import SwiftUI
 ///A `View`for entering in an order. Takes basic information about the order from `menuItem`
 struct MenuDetailView: View {
-    let sizes: [Size] = [.small, .medium, .large]
+   
     @ObservedObject var orderModel: OrderModel
     @EnvironmentObject var settings: UserPreferences
     @State var didOrder: Bool = false
@@ -44,32 +44,8 @@ struct MenuDetailView: View {
                 .underline()
                 
             //.. note: according to https://www.hackingwithswift.com/forums/swiftui/swiftui-xcode-12-2-picker-no-longer-shows-label/4809 Xcode 12 no longer shows picker label
-            Picker(selection: $settings.size, label:Text("Pizza Size")) {
-                ForEach(sizes, id: \.self) { size in
-                    Text(size.formatted()).tag(size)
-                }
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .background(Color("kamLightGreen"))
-                
-//            HStack{
-//                Spacer()
-//                Text("Pizza size")
-//                Text(settings.size.formatted())
-//            }
-            .font(.headline)
-            Stepper(value: $quantity, in: 1...10) {
-                Text("Quantity: \(quantity)")
-                    .bold()
-            }
-            
-//            HStack{
-//                Text("Quantity:")
-//                Text("1")
-//                    .bold()
-//                Spacer()
-//            }
-            .padding()
+            SizePickerView(size: $settings.size)
+            QuantityStepperView(quantity: $quantity)
             HStack{
                 Text("Order:  \(formattedPrice)")
                     .font(.headline)
@@ -107,5 +83,44 @@ struct MenuDetailView_Previews: PreviewProvider {
     static var previews: some View {
         MenuDetailView(orderModel: OrderModel(), menuItem: testMenuItem)
             .environmentObject(UserPreferences())
+    }
+}
+
+struct QuantityStepperView: View {
+    @Binding var quantity: Int
+    var body: some View {
+        Stepper(value: $quantity, in: 1...10) {
+            Text("Quantity: \(quantity)")
+                .bold()
+        }
+        
+        //            HStack{
+        //                Text("Quantity:")
+        //                Text("1")
+        //                    .bold()
+        //                Spacer()
+        //            }
+        .padding()
+    }
+}
+
+struct SizePickerView: View {
+    @Binding var size: Size
+    let sizes: [Size] = [.small, .medium, .large]
+    var body: some View {
+        Picker(selection: $size, label:Text("Pizza Size")) {
+            ForEach(sizes, id: \.self) { size in
+                Text(size.formatted()).tag(size)
+            }
+        }
+        .pickerStyle(SegmentedPickerStyle())
+        .background(Color("kamLightGreen"))
+        
+        //            HStack{
+        //                Spacer()
+        //                Text("Pizza size")
+        //                Text(settings.size.formatted())
+        //            }
+        .font(.headline)
     }
 }
