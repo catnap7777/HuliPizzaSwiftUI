@@ -27,6 +27,7 @@ struct ContentView: View {
             //.. this orderModel var is NOT Binding and is "read only" in OrderListView
             OrderListView(orderModel: orderModel)
                 .layoutPriority(isMenuDisplayed ? 0.5 : 1.0)
+                .animation(.spring())
             //.. spacers push everything away from the closest margin or object; since this is at bottom of VStack, it pushes whole thing up toward top
             //Spacer()
         }
