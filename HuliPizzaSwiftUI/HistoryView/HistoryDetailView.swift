@@ -11,6 +11,7 @@ import SwiftUI
 struct HistoryDetailView: View {
     var historyItem:HistoryItem
     @Binding var imageID:Int
+    @State var isPresented: Bool = false
     var body: some View {
         //.. since imageID is inside "var body", you have to use a "return" to return a view... otherwise it blows up.  In body, it must be a view (I think)
         imageID = historyItem.id
@@ -18,6 +19,9 @@ struct HistoryDetailView: View {
             PageTitleView(title: historyItem.name)
             MapView(latitude: historyItem.latitude, longitude: historyItem.longitude, regionRadius: 1000000)
                 .frame(height: 100)
+            //.. put the button after MapView because mapview has focus. Button will overlay on map
+            PresentMapButton(isPresented: $isPresented, historyItem: historyItem)
+                .foregroundColor(.yellow)
             Text(historyItem.history)
                 .frame(height:300)
             Spacer()

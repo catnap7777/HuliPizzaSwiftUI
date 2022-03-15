@@ -22,7 +22,8 @@ struct MapView: UIViewRepresentable {
     var longitude: Double
     var regionRadius: Double   //.. how far zooming in or out of map
     
-    //.. need two functions with UIViewRepresentable
+    //.. next two functions are needed for presenting the map with UIViewRepresentable
+   
     func makeUIView(context: Context) -> MKMapView {
         MKMapView(frame: .zero)
     }
