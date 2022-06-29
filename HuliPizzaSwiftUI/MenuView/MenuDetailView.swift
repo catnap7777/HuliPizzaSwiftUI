@@ -110,6 +110,7 @@ struct MenuDetailView: View {
 struct MenuDetailView_Previews: PreviewProvider {
     static var previews: some View {
         MenuDetailView(orderModel:OrderModel(),menuItem: testMenuItem)
+            .environmentObject(UserPreferences())
     }
 }
 
